@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import EventsAPI from '../services/EventsAPI';
-import unitygrid from '../assets/unitygrid.jpg';
-import '../css/Events.css';
+import React, { useState, useEffect } from "react";
+import EventsAPI from "../services/EventsAPI";
+import unitygrid from "../assets/unitygrid.jpg";
+// import '../css/Events.css';
 
 const Locations = () => {
   const [events, setEvents] = useState([]);
   const [venueNames, setVenueNames] = useState({
-    venue1: '',
-    venue2: '',
-    venue3: '',
-    venue4: '',
+    venue1: "",
+    venue2: "",
+    venue3: "",
+    venue4: "",
   });
 
   useEffect(() => {
@@ -32,17 +32,17 @@ const Locations = () => {
   }, []);
 
   const setListeners = () => {
-    const polygons = document.querySelectorAll('polygon');
+    const polygons = document.querySelectorAll("polygon");
 
     polygons.forEach(element => {
-      element.addEventListener('mouseover', event => {
+      element.addEventListener("mouseover", event => {
         const buttonElement = document.getElementById(
           `${event.target.id}button`
         );
         buttonElement.style.opacity = 1;
       });
 
-      element.addEventListener('mouseleave', event => {
+      element.addEventListener("mouseleave", event => {
         const buttonElement = document.getElementById(
           `${event.target.id}button`
         );

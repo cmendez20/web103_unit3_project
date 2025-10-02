@@ -1,6 +1,6 @@
 import { pool } from "../config/database.js";
 
-async function getAllLocations() {
+async function getAllLocations(req, res) {
   const query = `
     SELECT * FROM locations;
   `;

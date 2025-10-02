@@ -7,14 +7,14 @@ async function getAllEvents(req, res) {
 
   try {
     const result = await pool.query(query);
-    result.json(result.rows);
+    res.json(result.rows);
   } catch (error) {
     console.error("Error fetching all events:", error);
     throw error;
   }
 }
 
-async function getAllEvents(req, res) {
+async function getEventsByLocation(req, res) {
   const { locationId } = req.params;
 
   try {
@@ -23,11 +23,11 @@ async function getAllEvents(req, res) {
       [locationId]
     );
 
-    result.json(result.rows);
+    res.json(result.rows);
   } catch (error) {
     console.error("Error fetching all events:", error);
     throw error;
   }
 }
 
-export { getAllEvents, getAllEvents };
+export { getAllEvents, getEventsByLocation };

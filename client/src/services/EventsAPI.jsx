@@ -1,40 +1,28 @@
-import { useEffect, useState } from 'react';
-import Card from '../components/Card';
+const BASE_URL = "/api";
 
-function getAllEvents() {
-  const [events, setEvents] = useState([]);
+const getAllEvents = async () => {
+  try {
+    const response = await fetch(`${BASE_URL}/events`);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error fetching all events:", error);
+    throw error;
+  }
+};
 
-  useEffect(() => {
-    const fetchEvents = async () => {
-      const response = await fetch(`http://localhost:3001/events`);
-      const data = await response.json();
-      console.log(`events data: ${data}`);
-      setEvents(data);
-    };
+const getEventsByLocationId = async locationId => {
+  try {
+    const response = await fetch(`${BASE_URL}/events/locations/${locationId}`);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(`Error fetching events for location ${locationId}:`, error);
+    throw error;
+  }
+};
 
-    fetchEvents();
-  }, []);
-
-  return (
-    <div className="events">
-      <main>
-        {events && events.length > 0 ? (
-          events.map((event, index) => (
-            <Card
-              id={event.id}
-              key={event.id}
-              image={event.image_url}
-              name={event.event_name}
-              pricepoint={event.ticket_price}
-              // audience={event.artists}
-            />
-          ))
-        ) : (
-          <h3 className="noResults">{'No events Yet 😞'}</h3>
-        )}
-      </main>
-    </div>
-  );
-}
-
-export { getAllEvents };
+export default {
+  getAllEvents,
+  getEventsByLocationId,
+};
