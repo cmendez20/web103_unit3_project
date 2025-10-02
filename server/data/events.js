@@ -1,0 +1,148 @@
+const eventsJSON = [
+  {
+    id: '1',
+    eventName: 'The Backstage Bash',
+    artists: ['The Midnight Drifters', 'Luna Bloom'],
+    date: 'October 26, 2025',
+    venue: 'The Main Stage',
+    address: '123 Music Row, Plano, TX 75023',
+    genre: 'Indie Rock',
+    ticketPrice: 15.0,
+    imageUrl:
+      'https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+  },
+  {
+    id: '2',
+    eventName: 'Open Mic Night',
+    artists: ['Various'],
+    date: 'October 28, 2025',
+    venue: 'The Indie Oasis',
+    address: '789 Harmony Lane, Plano, TX 75093',
+    genre: 'Acoustic',
+    ticketPrice: 0.0,
+    imageUrl:
+      'https://images.pexels.com/photos/196652/pexels-photo-196652.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+  },
+  {
+    id: '3',
+    eventName: 'Rhythm & Rhymes Festival',
+    artists: ['MC Flow', 'DJ Beatdrop', 'Lyricist L'],
+    date: 'November 1, 2025',
+    venue: 'The Electric Grove',
+    address: '456 Bass Ave, Plano, TX 75075',
+    genre: 'Hip-Hop',
+    ticketPrice: 25.0,
+    imageUrl:
+      'https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+  },
+  {
+    id: '4',
+    eventName: 'Electronic Utopia',
+    artists: ['Zion', 'Synapse'],
+    date: 'November 5, 2025',
+    venue: 'The Electric Grove',
+    address: '456 Bass Ave, Plano, TX 75075',
+    genre: 'EDM',
+    ticketPrice: 30.0,
+    imageUrl:
+      'https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+  },
+  {
+    id: '5',
+    eventName: 'Acoustic Sundays',
+    artists: ['Serena May'],
+    date: 'November 3, 2025',
+    venue: 'The Indie Oasis',
+    address: '789 Harmony Lane, Plano, TX 75093',
+    genre: 'Acoustic',
+    ticketPrice: 0.0,
+    imageUrl:
+      'https://images.pexels.com/photos/196652/pexels-photo-196652.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+  },
+  {
+    id: '6',
+    eventName: 'Jazz Fusion Night',
+    artists: ['The Jazz Collective', 'Miles Davis Tribute Band'],
+    date: 'November 10, 2025',
+    venue: 'The Skyline Stage',
+    address: '101 Skyline Dr, Plano, TX 75024',
+    genre: 'Jazz',
+    ticketPrice: 20.0,
+    imageUrl:
+      'https://images.pexels.com/photos/1190298/pexels-photo-1190298.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+  },
+  {
+    id: '7',
+    eventName: 'Rocktober Fest',
+    artists: ['Guitars and Glory', 'The Mosh Pits'],
+    date: 'October 31, 2025',
+    venue: 'The Main Stage',
+    address: '123 Music Row, Plano, TX 75023',
+    genre: 'Rock',
+    ticketPrice: 18.0,
+    imageUrl:
+      'https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+  },
+  {
+    id: '8',
+    eventName: 'Sunset Sessions',
+    artists: ['The Lumineers', 'Vance Joy'],
+    date: 'November 2, 2025',
+    venue: 'The Main Stage',
+    address: '123 Music Row, Plano, TX 75023',
+    genre: 'Folk Rock',
+    ticketPrice: 45.0,
+    imageUrl:
+      'https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+  },
+  {
+    id: '9',
+    eventName: 'Bass Drop Bonanza',
+    artists: ['Skrillex', 'Deadmau5'],
+    date: 'November 8, 2025',
+    venue: 'The Electric Grove',
+    address: '456 Bass Ave, Plano, TX 75075',
+    genre: 'Dubstep',
+    ticketPrice: 50.0,
+    imageUrl:
+      'https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+  },
+  {
+    id: '10',
+    eventName: 'Indiependence Day',
+    artists: ['The Strokes', 'Arctic Monkeys'],
+    date: 'November 15, 2025',
+    venue: 'The Indie Oasis',
+    address: '789 Harmony Lane, Plano, TX 75093',
+    genre: 'Indie Rock',
+    ticketPrice: 40.0,
+    imageUrl:
+      'https://images.pexels.com/photos/196652/pexels-photo-196652.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+  },
+  {
+    id: '11',
+    eventName: 'Pop Power Hour',
+    artists: ['Dua Lipa', 'Harry Styles'],
+    date: 'November 12, 2025',
+    venue: 'The Skyline Stage',
+    address: '101 Skyline Dr, Plano, TX 75024',
+    genre: 'Pop',
+    ticketPrice: 60.0,
+    imageUrl:
+      'https://images.pexels.com/photos/1190298/pexels-photo-1190298.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+  },
+  {
+    id: '12',
+    eventName: 'Folk Fest',
+    artists: ['Bon Iver', 'Fleet Foxes'],
+    date: 'November 20, 2025',
+    venue: 'The Skyline Stage',
+    address: '101 Skyline Dr, Plano, TX 75024',
+    genre: 'Folk',
+    ticketPrice: 35.0,
+    imageUrl:
+      'https://images.pexels.com/photos/1190298/pexels-photo-1190298.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+  },
+];
+
+export { eventsJSON };
