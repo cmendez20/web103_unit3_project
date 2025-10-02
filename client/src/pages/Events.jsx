@@ -1,32 +1,28 @@
 import React, { useState, useEffect } from 'react';
-import LocationsAPI from '../services/LocationsAPI';
+import EventsAPI from '../services/EventsAPI';
 import unitygrid from '../assets/unitygrid.jpg';
-import '../css/Locations.css';
+import '../css/Events.css';
 
 const Locations = () => {
-  const [events, setLocations] = useState([]);
+  const [events, setEvents] = useState([]);
   const [venueNames, setVenueNames] = useState({
     venue1: '',
     venue2: '',
     venue3: '',
     venue4: '',
   });
-  events;
+
   useEffect(() => {
-    events(async () => {
+    (async () => {
       try {
-        events;
-        events;
-        events;
-        events;
-        const locationsData = await LocationsAPI.getAllLocations();
-        setLocations(locationsData);
+        const eventsData = await EventsAPI.getAllEvents();
+        setEvents(eventsData);
 
         setVenueNames({
-          venue1: locationsData[0].name,
-          venue2: locationsData[1].name,
-          venue3: locationsData[2].name,
-          venue4: locationsData[3].name,
+          venue1: eventsData[0].name,
+          venue2: eventsData[1].name,
+          venue3: eventsData[2].name,
+          venue4: eventsData[3].name,
         });
         setListeners();
       } catch (error) {
@@ -40,7 +36,9 @@ const Locations = () => {
 
     polygons.forEach(element => {
       element.addEventListener('mouseover', event => {
-        const buttonElement = docueventslementById(`${event.target.id}button`);
+        const buttonElement = document.getElementById(
+          `${event.target.id}button`
+        );
         buttonElement.style.opacity = 1;
       });
 
