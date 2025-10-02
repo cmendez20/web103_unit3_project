@@ -1,4 +1,4 @@
-import { pool } from '../config/database.js';
+import { pool } from "../config/database.js";
 
 async function getAllLocations() {
   const query = `
@@ -7,9 +7,9 @@ async function getAllLocations() {
 
   try {
     const result = await pool.query(query);
-    return result.rows;
+    res.json(result.rows);
   } catch (error) {
-    console.error('Error fetching all locations:', error);
+    console.error("Error fetching all locations:", error);
     throw error;
   }
 }
