@@ -52,8 +52,6 @@ const Locations = () => {
           <Link to={`/locations/${location.id}`} key={location.id}>
             <polygon
               id={`venue${index + 1}`}
-              // The points are hardcoded for 4 locations. This part of your code is not dynamic.
-              // I am keeping the hardcoded polygons for now.
               points={getPolygonPoints(index + 1)}
             />
           </Link>
@@ -63,7 +61,6 @@ const Locations = () => {
   );
 };
 
-// Helper function to return the hardcoded polygon points
 const getPolygonPoints = index => {
   const points = [
     "2.97,234.52 17.94,198.9 34.45,188.58 52.52,191.68 56.65,196.32 69.03,162.26 84,137.48 103.61,121.48 126.32,109.61 154.71,125.61 175.87,149.87 189.81,176.71 199.61,206.13 205.81,229.35 210.45,243.81 206.84,272.19 214.58,285.1 214.58,302.13 203.74,334.13 194.45,351.68 205.29,366.65 132.52,366.65 159.35,391.42 155.74,399.68 119.61,399.68 86.06,399.68 62.84,399.68 25.16,399.68 0,397.61",

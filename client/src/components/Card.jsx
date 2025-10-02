@@ -1,21 +1,18 @@
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useEffect } from "react";
 
 const Card = props => {
-  const [event, setEvents] = useState({
-    id: 0,
-    name: '',
-    pricepoint: '',
-    audience: '',
-    image: '',
+  const [event, setEvent] = useState({
+    name: "",
+    pricepoint: "",
+    image: "",
   });
 
   useEffect(() => {
-    setEvents({
-      id: props.id,
+    setEvent({
       name: props.event_name,
-      pricepoint: props.ticket_price,
-      // audience: props.audience,
+      pricepoint: props.ticket_price
+        ? parseFloat(props.ticket_price).toFixed(2)
+        : "0.00",
       image: props.image_url,
     });
   }, [props]);
@@ -28,10 +25,11 @@ const Card = props => {
       ></div>
       <div className="bottom-container">
         <h3>{event.name}</h3>
-        <p>{'Price: ' + event.pricepoint}</p>
-        <Link to={'/event/' + event.id}>
-          <a>Read More →</a>
-        </Link>
+        {/* Display "Free" for $0.00 price point */}
+        <p>
+          {event.pricepoint === "0.00" ? "Free" : `Price: $${event.pricepoint}`}
+        </p>
+        {/* The link is removed because the route /event/:id does not exist yet */}
       </div>
     </div>
   );
